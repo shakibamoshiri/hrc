@@ -12,7 +12,7 @@ Every hour on Sun, Tue, The will run
 
 
 ```bash
-0 */1 * * 0,2,4 timeout 30s ssh irj  'cat /dev/urandom' | pv | cat - &> /dev/null
+0 */1 * * 0,2,4 timeout 30s ssh REMOTE_SERVER'cat /dev/urandom' | pv | cat - &> /dev/null
 ```
 
 
