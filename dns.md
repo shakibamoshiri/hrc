@@ -53,6 +53,8 @@ sudo systemctl reload NetworkManager.service
 
 NOTE: if you are using a server not a desktop, you might not have **NetworkManager** on your server.
 
+ - [source](https://andrea.corbellini.name/2020/04/28/ubuntu-global-dns/)   
+
 ### Update your /etc/resolv.conf file
 
 Run the following 
@@ -64,3 +66,4 @@ sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 and reboot your machine, when it came up, you should see what you have set for `DNS=` in `/etc/systemd/resolved.conf`.
 
 
+ - [source](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)   
