@@ -15,7 +15,7 @@ iptables -X
 
 ## how to allow VPN traffic with iptables
 There are three **nat** rules for three VPN servers.  
-Change IP address accordingly.  
+Change IP address accordingly and `ens160` which is your server interface.  
 
 ```bash
 iptables -t nat -A POSTROUTING -s 10.147.252.0/24 -o ens160 -m comment --comment openvpn-nat-rule -j MASQUERADE
