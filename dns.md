@@ -34,7 +34,7 @@ resolvectl status
 ```
 
 ### Disable DNS processing in NetworkManager
-In `/etc/NetworkManager/conf.d/dns.con` add the following.  
+In `/etc/NetworkManager/conf.d/dns.conf` add the following.  
 If the path or file was not there, make/create them.
 
 ```bash
@@ -67,3 +67,25 @@ and reboot your machine, when it came up, you should see what you have set for `
 
 
  - [source](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)   
+
+
+## How to query using resolvectl
+
+First example
+
+```bash
+>>> resolvectl  query google.com
+google.com: 216.239.38.120                     -- link: wlp2s0
+
+-- Information acquired via protocol DNS in 43.2ms.
+-- Data is authenticated: no; Data was acquired via local or encrypted transport: no
+```
+
+Second example 
+
+```bash
+>>> resolvectl --legend=no -t A query google.com
+google.com IN A 216.239.38.120
+```
+
+ - [source](https://www.freedesktop.org/software/systemd/man/resolvectl.html)
