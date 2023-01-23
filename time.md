@@ -69,3 +69,8 @@ System clock synchronized: no
               NTP service: active                                <==== here
           RTC in local TZ: no
 ```
+
+source:
+ - [https://www.digitalocean.com/community/tutorials/how-to-set-up-time-synchronization-on-debian-10](https://www.digitalocean.com/community/tutorials/how-to-set-up-time-synchronization-on-debian-10)
+ - [https://www.cyberciti.biz/faq/linux-unix-bsd-is-ntp-client-working](https://www.cyberciti.biz/faq/linux-unix-bsd-is-ntp-client-working/)
+
