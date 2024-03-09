@@ -20,8 +20,10 @@ ip link set tun77 up
 
 ### server A
 
+the localhost:7373 will be the socks5 server address:port
+
 ```bash
-ssh -vNTC -w 77:77 REMOTE_SERVER
+ssh -vNTCD localhost:7373  REMOTE_SERVER
 ```
 
 ### server A
@@ -54,6 +56,14 @@ run `iperf3` client mode
 
 ```bash
 iperf3 --client 192.168.77.1 # server B ip 
+```
+
+### NOTE
+
+if you did not want to test socks5 but just SSH you can use 
+
+```bash
+ssh -vNTC -w 77:77 REMOTE_SERVER
 ```
 
 ---
