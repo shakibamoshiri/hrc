@@ -1,6 +1,6 @@
 # ip useful Linux commands 
 
-## how test socks5 speed with iperf3 
+## how to test socks5 speed with iperf3 between two servers
 
 ### server A
 
