@@ -1,24 +1,6 @@
 # curl useful Linux commands 
 
 
-## how to check speed with curl and cloudflare 
-
-### download 
-
-Run for 10 seconds to see average whine 10 seconds
-
-```bash
-curl --max-time 10 -o /dev/null https://speed.cloudflare.com/__down?bytes=9000000000
-```
-
-### upload 
-
-Run for 10 seconds to see average whine 10 seconds
-
-```bash
-curl --max-time 10 -o /dev/null -F up=@/dev/zero https://speed.cloudflare.com/__up?bytes=9000000000
-```
-
 ## how to run speedtest with curl and python
 
 ```bash
@@ -28,10 +10,14 @@ curl -sL https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.
 ## how to check speed with more servers 
 
 ```bash
+### method 1
 curl -sL network-speed.xyz | bash -s -- -r eu
+
+### method 2
+curl -Lso- bench.sh | bash
 ```
 
-### how to speed test with curl 
+## how to speed test with curl 
 
 ```
 ### 10M Download
@@ -41,7 +27,7 @@ curl --dump-header - --connect-timeout 10 -o /dev/null https://speed.cloudflare.
 curl --dump-header - --connect-timeout 10 -o /dev/null -F up=@/dev/zero https://speed.cloudflare.com/__up?bytes=$((10 * 1024 * 1024))
 ```
 
-### how to speed test with curl over a socks5 proxy 
+## how to speed test with curl over a socks5 proxy 
 
 ```
 ### 10M Download
@@ -51,10 +37,14 @@ curl --dump-header - --socks5-hostname 127.0.0.1:2080 --connect-timeout 10 -o /d
 curl --dump-header - --socks5-hostname 127.0.0.1:2080 --connect-timeout 10 -o /dev/null -F up=@/dev/zero https://speed.cloudflare.com/__up?bytes=$((10 * 1024 * 1024))
 ```
 
-### how to check an IP reputation with curl 
+## how to check an IP reputation with curl 
 
 ```
 ### try you own IP address
 curl --dump-header - https://reputation.noc.org/api/?ip=1.1.1.1
 
 ```
+### note
+You can check the link [https://reputation.noc.org](https://reputation.noc.org) in your browser
+
+
