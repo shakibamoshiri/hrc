@@ -30,3 +30,31 @@ curl -sL https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.
 ```bash
 curl -sL network-speed.xyz | bash -s -- -r eu
 ```
+
+### how to speed test with curl 
+
+```
+### 10M Download
+curl --dump-header - --connect-timeout 10 -o /dev/null https://speed.cloudflare.com/__down?bytes=$((10 * 1024 * 1024))
+
+### 10M Upload
+curl --dump-header - --connect-timeout 10 -o /dev/null -F up=@/dev/zero https://speed.cloudflare.com/__up?bytes=$((10 * 1024 * 1024))
+```
+
+### how to speed test with curl over a socks5 proxy 
+
+```
+### 10M Download
+curl --dump-header - --socks5-hostname 127.0.0.1:2080 --connect-timeout 10 -o /dev/null https://speed.cloudflare.com/__down?bytes=$((10 * 1024 * 1024))
+
+### 10M Upload
+curl --dump-header - --socks5-hostname 127.0.0.1:2080 --connect-timeout 10 -o /dev/null -F up=@/dev/zero https://speed.cloudflare.com/__up?bytes=$((10 * 1024 * 1024))
+```
+
+### how to check an IP reputation with curl 
+
+```
+### try you own IP address
+curl --dump-header - https://reputation.noc.org/api/?ip=1.1.1.1
+
+```
