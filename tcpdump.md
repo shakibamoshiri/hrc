@@ -20,3 +20,10 @@ tcpdump -vv -X -n -i any  -c 1 'tcp[32:4] = 0x5353482d'
 see this question and answer 
 
 - [how fast a firewall/DPI system can find an ssh server IP on a random port](https://superuser.com/questions/1822830/how-fast-a-firewall-dpi-system-can-find-an-ssh-server-ip-on-a-random-port)
+
+
+## how to capture SNI using tcpdump 
+
+```bash
+tcpdump -i any  -s 1500 port 443  and  '(tcp[((tcp[12:1] & 0xf0) >> 2)+5:1] = 0x01) and (tcp[((tcp[12:1] & 0xf0) >> 2):1] = 0x16)' -nnXSs0 -ttt
+```
