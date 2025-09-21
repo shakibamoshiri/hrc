@@ -48,3 +48,16 @@ curl --dump-header - https://reputation.noc.org/api/?ip=1.1.1.1
 You can check the link [https://reputation.noc.org](https://reputation.noc.org) in your browser
 
 
+
+## check your location with opening chat.openai.com
+
+```
+curl -sL https://chat.openai.com/cdn-cgi/trace
+```
+
+
+## check your location with opening chatgpt.com
+
+```
+curl -sL https://www.chatgpt.com/cdn-cgi/trace
+```
