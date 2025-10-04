@@ -29,6 +29,7 @@ tcpdump -i any  -s 1500 port 443  and  '(tcp[((tcp[12:1] & 0xf0) >> 2)+5:1] = 0x
 ```
 # https://www.baeldung.com/linux/tcpdump-capture-ssl-handshake
 
+```bash
 tcpdump -vv -X -n -i any   -c 1  'tcp[32:4] = 0x5353482d'
 tcpdump -vv -X -n -i any   -c 10  "tcp[tcpflags] & (tcp-push) != 0 and src port 989"
 tcpdump -vv -X -n -i any   -c 10 '(tcp[((tcp[12] & 0xf0) >>2)] = 0x16)  && (tcp[((tcp[12] & 0xf0) >>2)+5] = 0x01) and port 8080'
