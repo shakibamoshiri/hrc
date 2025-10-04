@@ -9,6 +9,15 @@ This will capture one packet that has data on port 22
 tcpdump -vv -X -n -i any  -c 1 "tcp[tcpflags] & (tcp-push) != 0 and port 22"
 ```
 
+note:  
+we can use `tcpflow` to capture only the tcp payload 
+
+```bash
+tcpflow -C -i lo  dst port 9091
+```
+
+this will outbound the tcp payload of tls offloaded which destination port is 9091
+
 ## how to filter SSH connection when we do not know the SSH port
 
 Checking TCP header and capture one packet when matched
